@@ -9,10 +9,8 @@ class ProductController extends Controller
 {
     public function showHomepage()
     {
-        // Fetch all products with their associated colors
-        $products = Product::with('colors')->get();
-
-        // Pass the products to the homepage view
+        
+        $products = Product::with(['images', 'colors'])->get();
         return view('index', compact('products'));
     }
 }

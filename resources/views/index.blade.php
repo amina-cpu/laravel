@@ -66,7 +66,7 @@
     <header>
         <div class="inner">
             <a href="/">
-                <img src="{{ asset('assets/images/Age.png') }}" alt="Logo" class="logo">
+                <img src="{{ asset('images/Age.png') }}" alt="Logo" class="logo">
             </a>
             <nav>
                 <a href="#">Vols</a>
@@ -76,21 +76,26 @@
         </div>
     </header>
 
-   <!-- Moving Product List -->
+
+<!-- Moving Product List -->
 <div class="product-slider">
     <div class="slider-track">
-    @foreach ($products as $product)
-    @foreach ($product->colors as $color)
-        <div class="product-card">
-            <h3>{{ $product->name }}</h3>
-            <p>${{ $product->price }}</p>
-            <p>Color: {{ $color->name }}</p>
-        </div>
-    @endforeach
-@endforeach
-
+        @foreach ($products as $product)
+            @foreach ($product->images as $image)
+                <div class="product-card">
+                    <!-- Dynamically display the product image -->
+                    <img src="{{ asset('images/' . $image->image_url) }}" alt="{{ $product->name }}">
+                    <h3><a href="{{ route('product.description', ['id' => $product->id]) }}">{{ $product->name }}</a></h3>
+                    <p>${{ $product->price }}</p>
+                    @foreach ($product->colors as $color)
+                        <p>Color: {{ $color->name }}</p>
+                    @endforeach
+                </div>
+            @endforeach
+        @endforeach
     </div>
 </div>
+
 
 </body>
 </html>
