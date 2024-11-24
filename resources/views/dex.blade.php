@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('assets/images/favicon-32x32.png') }}">
+  <link rel="icon" type="image/png" sizes="32x32" src="{{ asset('images/favicon-32x32.png') }}">
   
   <title>E-commerce product page</title>
   <link rel="stylesheet" href="{{ asset('css/main.css') }}">
@@ -12,14 +12,7 @@
   <style>
     .attribution { font-size: 18px; text-align: center; }
     .attribution a { color: hsl(228, 45%, 44%); }
-    img {
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  padding: 5px;
-  width: 150px;
-
-
-    }
+    
   </style>
 </head>
 <body>
@@ -27,8 +20,8 @@
   <main class="main-container">
     <header class="header">
       <div class="header__navigation">
-        <img class="header__menu" src="{{ asset('assets/icon-menu.svg') }}" alt="menu icon">
-        <img class="header__logo" src="{{ asset('assets/logo.svg') }}" alt="logo">
+        <img class="header__menu" src="{{ asset('images/icon-menu.svg') }}" alt="menu icon">
+        <img class="header__logo" src="{{ asset('images/logo.svg') }}" alt="logo">
 
         <nav class="navbar">
           <ul class="navbar__items">
@@ -42,27 +35,41 @@
 
 
       </div>
-
+            <!-- inicio modal navbar -->
+     
   
       <!-- final modal navbar -->
 
       <div class="header__cart-avatar">
         <div class="header__cart">
           <div class="header__cart--notification">0</div>
-          <img src="{{ asset('assets/images/icon-cart.svg') }}" alt="">
+          <img src="{{ asset('images/icon-cart.svg') }}" alt="">
         </div>
-        <img class="header__avatar" src="{{ asset('assets/images/user-icon-vector.jpg') }}" alt="">
+        <img class="header__avatar" src="{{ asset('images/user-icon-vector.jpg') }}" alt="">
       </div>
     </header>
    
     <section class="content">
-    <article class="details">
-        <h2 class="details__company">Product Details</h2>
+    
+    <article class="gallery">
+    <div class="gallery__image-container">
+    @if ($product->images->isNotEmpty())
+        <img class="gallery__previus" src="{{ asset('images/' . $product->images->first()->image_url) }}" alt="{{ $product->name }}">
+    @else
+        <p>No image available</p>
+    @endif
+    </div>
+
+
+         <div class="gallery__thumnails">
         @foreach ($product->images as $image)
-        <img src="{{ asset('images/' . $image->image_url) }}" alt="{{ $product->name }}">
+        <img  class="gallery__thumnail" src="{{ asset('images/' . $image->image_url) }}" alt="{{ $product->name }}">
          @endforeach
+         </div>
 
-
+         </article>
+         <article class="details">
+         <h2 class="details__company">Product Details</h2>
         <h2 class="details__title">{{ $product->name }}</h2>
        
         <div class="details__rating">
@@ -86,12 +93,12 @@
         </div>
         <div class="details__product-quantity">
             <div class="input">
-                <img class="input__minus" href="./images/icon-minus.svg" alt="minus">
+                <img class="input__minus" src="{{ asset('images/icon-minus.svg') }}" alt="minus">
                 <input class="input__number" type="text" value="0">
-                <img class="input__plus" href="./images/icon-plus.svg" alt="plus">
+                <img class="input__plus" src="{{ asset('images/icon-plus.svg') }}" alt="plus">
             </div>
             <button class="details__button">
-                <img href="./images/icon-cart-white.svg" alt=""> Add to cart
+                <img src="{{ asset('images/icon-cart-white.svg') }}" alt=""> Add to cart
             </button>
         </div>
     </article>
@@ -103,12 +110,12 @@
       <p class="cart-modal__title">Cart</p>
       <div class="cart-modal__chekout-container">
         <div class="cart-modal__details-container">
-          <img class="cart-modal__image" src="{{ asset('assets/images/image-product-1-thumbnail.jpg') }}" alt="error">
+          <img class="cart-modal__image" src="{{ asset('images/image-product-1-thumbnail.jpg') }}" alt="error">
           <div>
             <p class="cart-modal__product">Autumn Limited Edition...</p>
             <p class="cart-modal__price">$125 x3 <span>$375.00</span> </p>
           </div>
-          <img class="cart-modal__delete" src="{{ asset('assets/images/icon-delete.svg') }}" alt="delete">
+          <img class="cart-modal__delete" src="{{ asset('images/icon-delete.svg') }}" alt="delete">
         </div>
         <button class="cart-modal__chekount" >Checkout</button>
       </div>
@@ -127,11 +134,11 @@
   <div class="modal-gallery__background">
     <article class="modal-gallery">
       <div class="modal-gallery__close-container">
-        <img class="modal-gallery__close" href="./images/icon-close.svg" alt="icon close">
+        <img class="modal-gallery__close" src="{{ asset('images/icon-close.svg') }}" alt="icon close">
       </div>
       <div class="modal-gallery__image-container">
-        <img class="modal-gallery__previus" src="{{ asset('assets/images/icon-previous.svg') }}" alt="previus">
-        <img class="modal-gallery__next" src="{{ asset('assets/images/icon-next.svg') }}" alt="next">
+        <img class="modal-gallery__previus" src="{{ asset('images/icon-previous.svg') }}" alt="previus">
+        <img class="modal-gallery__next" src="{{ asset('images/icon-next.svg') }}" alt="next">
       </div>
       <div class="modal-gallery__thumnails">
         <img id="m1" class="modal-gallery__thumnail" src="{{ asset('assets/images/image-product-1-thumbnail.jpg') }}" alt="thumnail">
@@ -143,6 +150,6 @@
   </div>
   <!-- fin gallery modal -->
 
-  <script href="{{ asset('assets/js/main.js') }}"></script>
+  <script src="{{ asset('js/main.js') }}"></script>
 </body>
 </html>

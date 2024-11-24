@@ -62,86 +62,72 @@ function deleteProduct(){
     });
 }
 
-// Cambiar imagenes cuando se presione los botones flecha.
+// Change main image when a thumbnail is clicked
+let thumbnails = document.querySelectorAll('.gallery__thumnail');
+thumbnails = [...thumbnails];
+
 const imageContainer = document.querySelector('.gallery__image-container');
-const previusGalleryBtn = document.querySelector('.gallery__previus');
-const nextGalleryBtn = document.querySelector('.gallery__next');
-let imgIndex = 1;
 
-nextGalleryBtn.addEventListener('click', ()=>{
-    changeNextImage(imageContainer);
-});
-
-previusGalleryBtn.addEventListener('click', ()=>{
-    changePreviusImage(imageContainer);
-});
-
-
-//Mostrar el modal de imagenes cuando hago click en la imagen principal.
-const imagesModal = document.querySelector('.modal-gallery__background');
-const closeModalBtn = document.querySelector('.modal-gallery__close');
-
-imageContainer.addEventListener('click', ()=>{
-    if(window.innerWidth >= 1115){
-        imagesModal.style.display = 'grid';
-    }
-    
-});
-
-closeModalBtn.addEventListener('click', ()=>{
-    imagesModal.style.display = 'none';
-});
-
-//Cambiar las imagenes principales desde los thumbnails
-let thumbnails = document.querySelectorAll('.gallery__thumnail')
-thumbnails = [...thumbnails]
-
-// Dès le chargement de la page, afficher la première image du thumbnail comme image principale
+// Set the first image as the main image on page load
 window.addEventListener('DOMContentLoaded', () => {
-    const firstThumbnail = document.querySelector('.gallery__thumnail');  // Sélectionne le premier thumbnail
-    const imageContainer = document.querySelector('.gallery__image-container');
-    
-    // Change l'image principale en fonction du premier thumbnail
-    imageContainer.style.backgroundImage = `url(${firstThumbnail.src.replace('-thumbnail', '')})`;  // Enlever '-thumbnail' de l'URL pour obtenir l'image principale
+    const firstThumbnail = document.querySelector('.gallery__thumnail');
+    if (firstThumbnail) {
+        imageContainer.style.backgroundImage = `url(${firstThumbnail.src})`;
+    }
 });
-
 
 thumbnails.forEach(thumbnail => {
     thumbnail.addEventListener('click', event => {
-        const selectedImageId = event.target.id;
-        
-        // Met à jour l'image principale
-        imageContainer.style.backgroundImage = `url('./images/image-product-${selectedImageId}.jpg')`;
+        const selectedImageSrc = event.target.src; // Get the thumbnail source
+        imageContainer.style.backgroundImage = `url(${selectedImageSrc})`;
 
-        // Marque la miniature sélectionnée
+        // Highlight the selected thumbnail
         thumbnails.forEach(thumb => thumb.classList.remove('active'));
         thumbnail.classList.add('active');
     });
 });
 
+// Change modal images using modal thumbnails
+let modalThumbnails = document.querySelectorAll('.modal-gallery__thumnail');
+const modalImageContainer = document.querySelector('.modal-gallery__image-container');
+modalThumbnails = [...modalThumbnails];
 
-//Cambiar las imagenes principales desde los thumbnails en el MODAL
-let modalthumbnails = document.querySelectorAll('.modal-gallery__thumnail');
-const modalImageContainer = document.querySelector('.modal-gallery__image-container')
-modalthumbnails = [...modalthumbnails]
-
-modalthumbnails.forEach(modalthumbnail => {
-    modalthumbnail.addEventListener('click', event=>{
-        console.log(event.target.id.slice(-1))
-        modalImageContainer.style.backgroundImage = `url('../images/image-product-${event.target.id.slice(-1)}.jpg')`
+modalThumbnails.forEach(modalThumbnail => {
+    modalThumbnail.addEventListener('click', event => {
+        const selectedImageSrc = event.target.src; // Get the thumbnail source
+        modalImageContainer.style.backgroundImage = `url(${selectedImageSrc})`;
     });
 });
 
-// Cambiar imagen principal de modal desde flechas en el modal
-const previusModalBtn = document.querySelector('.modal-gallery__previus');
-const nextModalBtn = document.querySelector('.modal-gallery__next');
+// Functions to change images using next/previous buttons
+function changeNextImage(imgContainer, imgList) {
+    const currentSrc = imgContainer.style.backgroundImage
+        .replace('url("', '')
+        .replace('")', '');
+    const currentIndex = imgList.findIndex(img => img.src === currentSrc);
+    const nextIndex = (currentIndex + 1) % imgList.length;
+    imgContainer.style.backgroundImage = `url(${imgList[nextIndex].src})`;
+}
 
-nextModalBtn.addEventListener('click', ()=>{
-    changeNextImage(modalImageContainer);
+function changePreviousImage(imgContainer, imgList) {
+    const currentSrc = imgContainer.style.backgroundImage
+        .replace('url("', '')
+        .replace('")', '');
+    const currentIndex = imgList.findIndex(img => img.src === currentSrc);
+    const prevIndex = (currentIndex - 1 + imgList.length) % imgList.length;
+    imgContainer.style.backgroundImage = `url(${imgList[prevIndex].src})`;
+}
+
+// Event listeners for next/previous buttons in the modal
+const nextModalBtn = document.querySelector('.modal-gallery__next');
+const prevModalBtn = document.querySelector('.modal-gallery__previus');
+
+nextModalBtn.addEventListener('click', () => {
+    changeNextImage(modalImageContainer, modalThumbnails);
 });
 
-previusModalBtn.addEventListener('click', ()=>{
-    changePreviusImage(modalImageContainer);
+prevModalBtn.addEventListener('click', () => {
+    changePreviousImage(modalImageContainer, modalThumbnails);
 });
 
 // Mostrar el navbar cuando presiono el menu de hamburgesa
@@ -188,7 +174,7 @@ function changeNextImage(imgContainer){
     }else{
         imgIndex++;
     }
-    imgContainer.style.backgroundImage = `url('./images/image-product-${imgIndex}.jpg')`
+    imgContainer.style.backgroundImage = `url('{{ asset(images/image-product-${imgIndex}.jpg')`
 }
 
 function changePreviusImage(imgContainer){
@@ -197,5 +183,5 @@ function changePreviusImage(imgContainer){
     }else{
         imgIndex--;
     }
-    imgContainer.style.backgroundImage = `url('./images/image-product-${imgIndex}.jpg')`
+    imgContainer.style.backgroundImage = `url('{{ asset(images/image-product-${imgIndex}.jpg')`
 }

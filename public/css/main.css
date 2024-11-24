@@ -443,6 +443,7 @@ body {
 }
 .modal-gallery__thumnail {
   width: 90px;
+  justify-content: space-between;
   border-radius: 16px;
 }
 .modal-gallery__thumnail:hover {
