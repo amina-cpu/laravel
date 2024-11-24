@@ -90,7 +90,23 @@
             <div class="details__colors">
                 <p>Color: <strong>{{ $product->colors->pluck('name')->join(', ') }}</strong></p>
             </div>
+            <div class="details__sizes">
+            <p><strong>Sizes :</strong></p>
+            <div class="size-options">
+              <button class="size-option">34</button>
+              <button class="size-option">36</button>
+              <button class="size-option">38</button>
+              <button class="size-option">40</button>
+              <button class="size-option">42</button>
+              <button class="size-option">44</button>
+              <button class="size-option">46</button>
+              <button class="size-option">48</button>
+              <button class="size-option">50</button>
+            </div>
+            <a href="#" class="size-guide">Size guide</a>
+          </div>
         </div>
+
         <div class="details__product-quantity">
             <div class="input">
                 <img class="input__minus" src="{{ asset('images/icon-minus.svg') }}" alt="minus">
