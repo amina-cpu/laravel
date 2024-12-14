@@ -1,51 +1,3 @@
-/* Header styles */
-header {
-  display: block;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 80px;
-  z-index: 10;
-  background: #000000;
-  opacity: 0.8;
-}
-header .inner {
-  max-width: 1060px;
-  margin: 0 auto;
-  display: flex;
-  height: 80px;
-  align-items: center;
-  justify-content: center;
-}
-header nav a {
-  font-family: 'Arial', serif;
-  font-size: 12px;
-  color: #8c8c8e;
-  text-transform: uppercase;
-  letter-spacing: 3px;
-  text-decoration: none;
-  margin: 0 18px;
-}
-header nav a.active,
-header nav a:hover {
-  color: white;
-}
-header .donate-link {
-  width: 72px;
-  text-align: center;
-  position: absolute;
-  right: 10px;
-  top: 27px;
-  font-family: 'Arial', sans-serif;
-  font-size: 12px;
-  color: white;
-  text-transform: uppercase;
-  letter-spacing: 3px;
-  text-decoration: none;
-  padding-bottom: 6px;
-  border-bottom: 2px solid rgba(255, 255, 255, 0.3);
-}
 
 /* Footer styles */
 .footer-dark {
@@ -109,8 +61,4 @@ header .inner {
 header .logo {
     height: 80px; /* Adjust the logo size as needed */
     margin-right: 30px; /* Add some space between the logo and nav */
-}
-body
-{
-  background-color: #FFE3E3;
 }
