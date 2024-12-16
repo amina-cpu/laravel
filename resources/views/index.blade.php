@@ -389,7 +389,25 @@ body {
         <div class="carousel-inner">
         
             
-      
+        @foreach ($products as $index => $product)
+    <div class="item {{ $index == 0 ? 'active' : '' }}">
+        <div class="col-xs-12 col-sm-6 col-md-2">
+            <a href="#">
+                @if ($product->images->isNotEmpty())
+                    <img src="{{ asset('images/' . $product->images->first()->image_url) }}" alt="{{ $product->name }}" class="img-responsive center-block">
+                @else
+                    <img src="{{ asset('images/default.jpg') }}" alt="Default Image" class="img-responsive center-block">
+                @endif
+            </a>
+            
+            <h4 class="text-center">
+                <a href="{{ route('product.description', ['id' => $product->id]) }}">{{ $product->name }}</a>
+            </h4>
+            <h5 class="text-center">{{ $product->price }}</h5>
+        </div>
+    </div>
+@endforeach
+
           </div> 
           <div id="slider-control">
         <a class="left carousel-control" href="#itemslider" data-slide="prev"><img src="https://cdn0.iconfinder.com/data/icons/website-kit-2/512/icon_402-512.png" alt="Left" class="img-responsive"></a>
@@ -421,7 +439,24 @@ body {
         <div class="carousel-inner">
         
             
-        
+        @foreach ($products as $index => $product)
+    <div class="item {{ $index == 0 ? 'active' : '' }}">
+        <div class="col-xs-12 col-sm-6 col-md-2">
+            <a href="#">
+                @if ($product->images->isNotEmpty())
+                    <img src="{{ asset('images/' . $product->images->first()->image_url) }}" alt="{{ $product->name }}" class="img-responsive center-block">
+                @else
+                    <img src="{{ asset('images/default.jpg') }}" alt="Default Image" class="img-responsive center-block">
+                @endif
+            </a>
+            
+            <h4 class="text-center">
+                <a href="{{ route('product.description', ['id' => $product->id]) }}">{{ $product->name }}</a>
+            </h4>
+            <h5 class="text-center">{{ $product->price }}</h5>
+        </div>
+    </div>
+@endforeach
 
           </div> 
           <div id="slider-control">

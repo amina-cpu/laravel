@@ -10,7 +10,7 @@ class ProductController extends Controller
     public function showHomepage()
     {
         
-       // $products = Product::with(['images', 'colors'])->get();
-        return view('index', );
+        $products = Product::with(['images', 'colors'])->get();
+        return view('index', compact('products'));
     }
 }
