@@ -14,8 +14,6 @@ Route::post('/registration', [App\Http\Controllers\RegistrationController::class
 // Route for homepage, which fetches products
 Route::get('/homepage', [ProductController::class, 'showHomepage']);
 Route::get('/product/{id}', [ProductDescription::class, 'show'])->name('product.description');
-
-// Add the send-email route
 Route::get('/send-email', [TestController::class, 'sendEmail']);
-get('/send-email', [TestController::class, 'sendEmail']);
+
 
