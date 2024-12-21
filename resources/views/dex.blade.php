@@ -222,14 +222,21 @@ body {
         </div>
 
         <div class="details__product-quantity">
-            <div class="input">
+           
+           <!-- Add to Cart Form -->
+           <form method="POST" action="{{ route('cart.add', $product->id) }}">
+                @csrf
+                <div class="input">
                 <img class="input__minus" src="{{ asset('images/icon-minus.svg') }}" alt="minus">
-                <input class="input__number" type="text" value="0">
+                <input class="input__number" name="quantity" type="text"  value="0">
                 <img class="input__plus" src="{{ asset('images/icon-plus.svg') }}" alt="plus">
-            </div>
-            <button class="details__button">
-                <img src="{{ asset('images/icon-cart-white.svg') }}" alt=""> Add to cart
-            </button>
+                </div>
+            
+                <button type="submit" class="details__button">
+                    <img src="{{ asset('images/icon-cart-white.svg') }}" alt=""> Add to cart
+                </button>
+
+            </form>
         </div>
     </article>
 </section>
