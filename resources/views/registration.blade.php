@@ -65,7 +65,7 @@
                    
 
                     <div class="form-group">
-                        <button type="submit" class="btn btn-success">Register</button>
+                        <button cltype="submit" ass="btn btn-success">Register</button>
                         <span>Already registered? <a href="{{ url('/login') }}">Login here</a></span>
                     </div>
                 </form>

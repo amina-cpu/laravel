@@ -5,11 +5,15 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProductDescription;
 use App\Http\Controllers\TestController;
 
-Route::get('/registration', function () {
-    return view('registration');
+
+Route::get('/signup', function () {
+    return view('signup');
+})->name('signup');  // Give it a name like 'signup'
+Route::get('/try', function () {
+    return view('try');
 });
 
-Route::post('/registration', [App\Http\Controllers\RegistrationController::class, 'store']);
+Route::post('/signup', [App\Http\Controllers\RegistrationController::class, 'store']);
 
 // Route for homepage, which fetches products
 Route::get('/homepage', [ProductController::class, 'showHomepage']);

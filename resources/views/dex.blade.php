@@ -12,43 +12,162 @@
   <style>
     .attribution { font-size: 18px; text-align: center; }
     .attribution a { color: hsl(228, 45%, 44%); }
-    
+    body, html, div, p, a, h1 {
+    margin: 0;
+    padding: 0;
+    font-family: "Arial", sans-serif;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #fff;
+}
+
+.canada {
+    background-color: #fff;
+    color: black;
+    text-align: center;
+    font-size: 16px;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: center; /* Centers the content horizontally */
+    align-items: center;    /* Centers the content vertically */
+    gap: 15px;              /* Adds spacing between the text elements */
+}
+
+.canada p {
+    margin: 0; /* Remove default margin to avoid alignment issues */
+}
+.announcement-bar {
+    background-color: #b5a192;
+    color: #fff;
+    text-align: center;
+    font-size: 16px;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: center; /* Centers the content horizontally */
+    align-items: center;    /* Centers the content vertically */
+    gap: 15px;              /* Adds spacing between the text elements */
+}
+
+.announcement-bar p {
+    margin: 0; /* Remove default margin to avoid alignment issues */
+}
+
+/* Header */
+.main-header {
+    background-color: #fff;
+    border-bottom: 1px solid #eee;
+    padding: 15px 20px;
+}
+
+.header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Logo */
+.logo {
+    text-align: center;
+    display: flex;
+    justify-content: center; /* Centers the content horizontally */
+    align-items: center;   
+}
+
+.logo p {
+    font-size: 18px;
+    font-weight: normal;
+    padding-top:10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 0;
+}
+
+/* Navigation */
+.navigation {
+    display: flex;
+    gap: 15px;
+}
+
+.navigation a {
+    font-size: 14px;
+    color: #333;
+    text-transform: uppercase;
+    transition: color 0.3s;
+}
+
+.navigation a:hover {
+    color: #556b67;
+    text-decoration: underline;
+}
+
+/* Icons */
+.user-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.icon {
+    font-size: 18px;
+    cursor: pointer;
+    color: #333;
+}
+
+.icon:hover {
+    color: #556b67;
+}
   </style>
 </head>
 <body>
 
-  <main class="main-container">
-    <header class="header">
-      <div class="header__navigation">
-        <img class="header__menu" src="{{ asset('images/icon-menu.svg') }}" alt="menu icon">
-        <img class="header__logo" src="{{ asset('images/logo.svg') }}" alt="logo">
-
-        <nav class="navbar">
-          <ul class="navbar__items">
-            <li><a class="navbar__link" href="#">Collections</a></li>
-            <li><a class="navbar__link" href="#">Men</a></li>
-            <li><a class="navbar__link" href="#">Women</a></li>
-            <li><a class="navbar__link" href="#">About</a></li>
-            <li><a class="navbar__link" href="#">Contact</a></li>
-          </ul>
-        </nav>
-
-
-      </div>
-            <!-- inicio modal navbar -->
-     
-  
-      <!-- final modal navbar -->
-
-      <div class="header__cart-avatar">
-        <div class="header__cart">
-          <div class="header__cart--notification">0</div>
-          <img src="{{ asset('images/icon-cart.svg') }}" alt="">
-        </div>
-        <img class="header__avatar" src="{{ asset('images/user-icon-vector.jpg') }}" alt="">
-      </div>
-    </header>
+ 
    
+       <!-- Announcement Bar -->
+
+       <div  class="canada">
+        <p>FREE SHIPPING OVER $99 IN CANADA →</p></div>
+         <div  class="announcement-bar">
+        <p>WE ARE UNABLE TO SHIP TO PO BOXES AT THIS TIME DUE TO THE CANADA POST STRIKE. PLEASE PROVIDE A STREET ADDRESS AT CHECKOUT →</p>
+</div>
+    
+<!-- Logo -->
+<div class="logo">
+                <p>Brand Logo</p>
+            </div>
+    <!-- Header -->
+    <header class="main-header">
+        <div class="header-inner">
+            <!-- Search Icon -->
+            <div class="icon search-icon">🔍</div>
+
+            <!-- Navigation -->
+            <nav class="navigation">
+                <a href="/homepage">HOME</a>
+                <div class="dropdown">
+                    <a href="#">SHOP ALL</a>
+                </div>
+                <a href="#">CANDLES</a>
+                <a href="#">ESSENTIAL OILS</a>
+                <a href="#">SOAP</a>
+                <a href="#">SKINCARE</a>
+                <a href="#">HAIRCARE</a>
+                <a href="#">BATH & BODY</a>
+                <a href="#">ECO-REFILLS</a>
+                <a href="#">HOTEL AMENITIES</a>
+            </nav>
+
+            
+
+            <!-- User Icons -->
+            <div class="user-icons">
+                <div class="icon">👤</div>
+                <div class="icon">🛒</div>
+            </div>
+        </div>
+    </header>
+    <main class="main-container">
     <section class="content">
     
     <article class="gallery">
@@ -93,15 +212,10 @@
             <div class="details__sizes">
             <p><strong>Sizes :</strong></p>
             <div class="size-options">
-              <button class="size-option">34</button>
-              <button class="size-option">36</button>
-              <button class="size-option">38</button>
-              <button class="size-option">40</button>
-              <button class="size-option">42</button>
-              <button class="size-option">44</button>
-              <button class="size-option">46</button>
-              <button class="size-option">48</button>
-              <button class="size-option">50</button>
+              <button class="size-option">S</button>
+              <button class="size-option">M</button>
+              <button class="size-option">L</button>
+              
             </div>
             <a href="#" class="size-guide">Size guide</a>
           </div>

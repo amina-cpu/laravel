@@ -7,7 +7,11 @@
     <link rel="stylesheet" href="{{ asset('css/homestyle.css') }}">
     <!-- Latest compiled and minified CSS -->
 <!-- https://xstore.8theme.com/demos/hosting/-->
+
+
+<meta name='viewport' content='width=device-width, initial-scale=1'>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <!-- Optional theme -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
@@ -15,309 +19,17 @@
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,700&subset=latin-ext" rel="stylesheet">
- 
-    <style>
-        /* Basic styles for the slider */
-        
- 
-    .ima img {
-        width: 100%;
-        height: 100vh;
-        object-fit: cover;
-    }
-    
-        /* Global Reset */
-body, html, div, p, a, h1 {
-    margin: 0;
-    padding: 0;
-    font-family: "Arial", sans-serif;
-    text-decoration: none;
-    box-sizing: border-box;
-}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
 
-body {
-    background-color: #fff;
-}
 
-.canada {
-    background-color: #fff;
-    color: black;
-    text-align: center;
-    font-size: 16px;
-    padding: 10px 20px;
-    display: flex;
-    justify-content: center; /* Centers the content horizontally */
-    align-items: center;    /* Centers the content vertically */
-    gap: 15px;              /* Adds spacing between the text elements */
-}
-
-.canada p {
-    margin: 0; /* Remove default margin to avoid alignment issues */
-}
-.announcement-bar {
-    background-color: #b5a192;
-    color: #fff;
-    text-align: center;
-    font-size: 16px;
-    padding: 10px 20px;
-    display: flex;
-    justify-content: center; /* Centers the content horizontally */
-    align-items: center;    /* Centers the content vertically */
-    gap: 15px;              /* Adds spacing between the text elements */
-}
-
-.announcement-bar p {
-    margin: 0; /* Remove default margin to avoid alignment issues */
-}
-
-/* Header */
-.main-header {
-    background-color: #fff;
-    border-bottom: 1px solid #eee;
-    padding: 15px 20px;
-}
-
-.header-inner {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-/* Logo */
-.logo {
-    text-align: center;
-    display: flex;
-    justify-content: center; /* Centers the content horizontally */
-    align-items: center;   
-}
-
-.logo p {
-    font-size: 18px;
-    font-weight: normal;
-    padding-top:10px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    margin: 0;
-}
-
-/* Navigation */
-.navigation {
-    display: flex;
-    gap: 15px;
-}
-
-.navigation a {
-    font-size: 14px;
-    color: #333;
-    text-transform: uppercase;
-    transition: color 0.3s;
-}
-
-.navigation a:hover {
-    color: #556b67;
-    text-decoration: underline;
-}
-
-/* Icons */
-.user-icons {
-    display: flex;
-    gap: 15px;
-}
-
-.icon {
-    font-size: 18px;
-    cursor: pointer;
-    color: #333;
-}
-
-.icon:hover {
-    color: #556b67;
-}
-#slider-text{
-  padding-top: 40px;
-  display: block;
-}
-#slider-text .col-md-6{
-  overflow: hidden;
-}
-
-#slider-text h2 {
-  font-family: 'Josefin Sans', sans-serif;
-  font-weight: 400;
-  font-size: 30px;
-  letter-spacing: 3px;
-  margin: 30px auto;
-  padding-left: 40px;
-}
-#slider-text h2::after{
-  border-top: 2px solid #c7c7c7;
-  content: "";
-  position: absolute;
-  bottom: 35px;
-  width: 100%;
-  }
-
-#itemslider h4{
-  font-family: 'Josefin Sans', sans-serif;
-  font-weight: 400;
-  font-size: 12px;
-  margin: 10px auto 3px;
-}
-#itemslider h5{
-  font-family: 'Josefin Sans', sans-serif;
-  font-weight: bold;
-  font-size: 12px;
-  margin: 3px auto 2px;
-}
-#itemslider h6{
-  font-family: 'Josefin Sans', sans-serif;
-  font-weight: 300;;
-  font-size: 10px;
-  margin: 2px auto 5px;
-}
-.badge {
-  background: #b20c0c;
-  position: absolute;
-  height: 40px;
-  width: 40px;
-  border-radius: 50%;
-  line-height: 31px;
-  font-family: 'Josefin Sans', sans-serif;
-  font-weight: 300;
-  font-size: 14px;
-  border: 2px solid #FFF;
-  box-shadow: 0 0 0 1px #b20c0c;
-  top: 5px;
-  right: 25%;
-}
-#slider-control img{
-  padding-top: 60%;
-  margin: 0 auto;
-}
-@media screen and (max-width: 992px){
-#slider-control img {
-  padding-top: 70px;
-  margin: 0 auto;
-}
-}
-
-.carousel-showmanymoveone .item img {
-    width: 250px;  /* Increase width */
-    height: 250px; /* Make height equal to width for square aspect */
-    object-fit: cover; /* Ensure image covers entire square without distortion */
-    margin: 0 auto;  /* Center the image */
-}
-.carousel-showmanymoveone .carousel-control {
-  width: 4%;
-  background-image: none;
-}
-.carousel-showmanymoveone .carousel-control.left {
-  margin-left: 5px;
-}
-.carousel-showmanymoveone .carousel-control.right {
-  margin-right: 5px;
-}
-.carousel-showmanymoveone .cloneditem-1,
-.carousel-showmanymoveone .cloneditem-2,
-.carousel-showmanymoveone .cloneditem-3,
-.carousel-showmanymoveone .cloneditem-4,
-.carousel-showmanymoveone .cloneditem-5 {
-  display: none;
-}
-@media all and (min-width: 768px) {
-  .carousel-showmanymoveone .carousel-inner > .active.left,
-  .carousel-showmanymoveone .carousel-inner > .prev {
-    left: -50%;
-  }
-  .carousel-showmanymoveone .carousel-inner > .active.right,
-  .carousel-showmanymoveone .carousel-inner > .next {
-    left: 50%;
-  }
-  .carousel-showmanymoveone .carousel-inner > .left,
-  .carousel-showmanymoveone .carousel-inner > .prev.right,
-  .carousel-showmanymoveone .carousel-inner > .active {
-    left: 0;
-  }
-  .carousel-showmanymoveone .carousel-inner .cloneditem-1 {
-    display: block;
-  }
-}
-@media all and (min-width: 768px) and (transform-3d), all and (min-width: 768px) and (-webkit-transform-3d) {
-  .carousel-showmanymoveone .carousel-inner > .item.active.right,
-  .carousel-showmanymoveone .carousel-inner > .item.next {
-    -webkit-transform: translate3d(50%, 0, 0);
-    transform: translate3d(50%, 0, 0);
-    left: 0;
-  }
-  .carousel-showmanymoveone .carousel-inner > .item.active.left,
-  .carousel-showmanymoveone .carousel-inner > .item.prev {
-    -webkit-transform: translate3d(-50%, 0, 0);
-    transform: translate3d(-50%, 0, 0);
-    left: 0;
-  }
-  .carousel-showmanymoveone .carousel-inner > .item.left,
-  .carousel-showmanymoveone .carousel-inner > .item.prev.right,
-  .carousel-showmanymoveone .carousel-inner > .item.active {
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-    left: 0;
-  }
-}
-@media all and (min-width: 992px) {
-  .carousel-showmanymoveone .carousel-inner > .active.left,
-  .carousel-showmanymoveone .carousel-inner > .prev {
-    left: -16.666%;
-  }
-  .carousel-showmanymoveone .carousel-inner > .active.right,
-  .carousel-showmanymoveone .carousel-inner > .next {
-    left: 16.666%;
-  }
-  .carousel-showmanymoveone .carousel-inner > .left,
-  .carousel-showmanymoveone .carousel-inner > .prev.right,
-  .carousel-showmanymoveone .carousel-inner > .active {
-    left: 0;
-  }
-  .carousel-showmanymoveone .carousel-inner .cloneditem-2,
-  .carousel-showmanymoveone .carousel-inner .cloneditem-3,
-  .carousel-showmanymoveone .carousel-inner .cloneditem-4,
-  .carousel-showmanymoveone .carousel-inner .cloneditem-5,
-  .carousel-showmanymoveone .carousel-inner .cloneditem-6  {
-    display: block;
-  }
-}
-@media all and (min-width: 992px) and (transform-3d), all and (min-width: 992px) and (-webkit-transform-3d) {
-  .carousel-showmanymoveone .carousel-inner > .item.active.right,
-  .carousel-showmanymoveone .carousel-inner > .item.next {
-    -webkit-transform: translate3d(16.666%, 0, 0);
-    transform: translate3d(16.666%, 0, 0);
-    left: 0;
-  }
-  .carousel-showmanymoveone .carousel-inner > .item.active.left,
-  .carousel-showmanymoveone .carousel-inner > .item.prev {
-    -webkit-transform: translate3d(-16.666%, 0, 0);
-    transform: translate3d(-16.666%, 0, 0);
-    left: 0;
-  }
-  .carousel-showmanymoveone .carousel-inner > .item.left,
-  .carousel-showmanymoveone .carousel-inner > .item.prev.right,
-  .carousel-showmanymoveone .carousel-inner > .item.active {
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-    left: 0;
-  }
-}
-.me-5{
-  padding:10px;
-}
-
-    </style>
 </head>
 <body>
 
        <!-- Announcement Bar -->
 
-        <div  class="canada">
-        <p>FREE SHIPPING OVER $99 IN CANADA →</p></div>
+        <div  class="canada"> <a href="{{ route('signup') }}">
+        <p>LOGIN/SIGNUP→</p></a></div>
          <div  class="announcement-bar">
         <p>WE ARE UNABLE TO SHIP TO PO BOXES AT THIS TIME DUE TO THE CANADA POST STRIKE. PLEASE PROVIDE A STREET ADDRESS AT CHECKOUT →</p>
 </div>
@@ -330,19 +42,19 @@ body {
     <header class="main-header">
         <div class="header-inner">
             <!-- Search Icon -->
-            <div class="icon search-icon">🔍</div>
+            <div class="icon search-icon"><i class="fa fa-search" aria-hidden="true"></i></div>
 
             <!-- Navigation -->
             <nav class="navigation">
                 <a href="#">HOME</a>
                 <div class="dropdown">
-                    <a href="#">SHOP ALL</a>
+                    <a href="#">ABOUT US</a>
                 </div>
-                <a href="#">CANDLES</a>
-                <a href="#">ESSENTIAL OILS</a>
-                <a href="#">SOAP</a>
-                <a href="#">SKINCARE</a>
-                <a href="#">HAIRCARE</a>
+                <a href="#">SHOP ALL</a>
+                <a href="#">DRESSES</a>
+                <a href="#">HIGH HEELS</a>
+                <a href="#">PANTS</a>
+                <a href="#">SUITS</a>
                 <a href="#">BATH & BODY</a>
                 <a href="#">ECO-REFILLS</a>
                 <a href="#">HOTEL AMENITIES</a>
@@ -350,39 +62,118 @@ body {
 
             
 
+
             <!-- User Icons -->
             <div class="user-icons">
-                <div class="icon">👤</div>
-                <div class="icon">🛒</div>
+                
+                <div class="icon"><i class='fas fa-cart-plus' style='font-size:24px'></i></div>
             </div>
         </div>
     </header>
-    <div class="slideshow-container">
-    
-    <div class="ima">
-        <img src="{{asset('images/cloth.jpg')}}" alt="Slide 1">
-    </div>
-
-   
-
-    
-
-
-       
-        
-    </div>
+    <div class="content-container">
+        <div class="text-content">
+            <h2>Welcome to BRAND!</h2>
+            <br>
+            <p>
+                Discover our very unique collection of clothing. 
+            </p>
+            <div class="button-container">
+    <button class="buy-button">Start looking</button>
+    <button class="info-button" > <a href="#features">More info </a><span>&#x25BC;</span></button>
 </div>
+<div class="arrow-container">
+    <div class="outline-arrow"></div>
+</div>
+
+        </div>
+        <div class="image-overlay">
+            <img src="{{asset('images/cloth.jpg')}}" alt="Sample Image" class="overlay-image">
+        </div>
+    </div>
+  
+    <div id="features">
+    
+
+
+  
+     
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>  
+    <section class="py-6 bg-light-primary">
+    <div class="container" >
+        <div class="row justify-content-center text-center mb-4">
+            <div class="col-xl-6 col-lg-8 col-sm-10">
+                <h2 class="section-title">Features You'll Love</h2>
+                <p class="text-muted">Discover the perfect blend of convenience and style to enhance your shopping experience.</p>
+            </div>
+        </div>
+
+        <div class="row row-cols-lg-3 row-cols-md-2 row-cols-1 text-center justify-content-center">
+            <!-- Free Shipping -->
+            <div class="col my-3">
+                <div class="card hover-scale">
+                    <div class="card-body">
+                        <div class="icon-container">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <path d="M20 8h-3V5a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v11a2 2 0 0 0 2 2h1a3 3 0 0 0 6 0h4a3 3 0 0 0 6 0h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2zm-5-2v2H3V6h12zm-9 9a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm10 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm3-3h-5V9h3l2 2v1z" />
+                            </svg>
+                        </div>
+                        <h6 class="feature-title">Free Shipping</h6>
+                        <p class="feature-text">Enjoy free shipping on all orders that are over $50.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Easy Returns -->
+            <div class="col my-3">
+                <div class="card hover-scale">
+                    <div class="card-body">
+                        <div class="icon-container">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <path d="M18 6a1 1 0 0 1 0 2h-1.35a6 6 0 0 1-11.29 4H6a1 1 0 0 1 0 2H3a1 1 0 0 1-1-1V9a1 1 0 0 1 2 0v1.35a8 8 0 0 0 15.24-3.58H18z" />
+                            </svg>
+                        </div>
+                        <h6 class="feature-title">Easy Returns</h6>
+                        <p class="feature-text">Hassle-free returns within 30 days of purchase.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Exclusive Discounts -->
+            <div class="col my-3">
+                <div class="card hover-scale">
+                    <div class="card-body">
+                        <div class="icon-container">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <path d="M11 2H6a2 2 0 0 0-2 2v5h2V4h5V2zm7 7h-3v2h1.59l-7.29 7.29-1.29-1.29-1.41 1.41L10.41 20h.09l7.3-7.3V15h2V9h-2z" />
+                            </svg>
+                        </div>
+                        <h6 class="feature-title">Exclusive Discounts</h6>
+                        <p class="feature-text">Sign up for special offers and seasonal discounts.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+</div>
+       
+<br>
+<br>
 <br>
 <br>
 <!-- Moving Product List -->
 <div class="container-fluid">
-<div class="container">
-  <div class="row" id="slider-text">
-    <div class="col-md-6" >
-      <h2>NEW COLLECTION</h2>
+
+  <div class="row align-items-center" id="slider-text">
+    <div class="col-md-6">
+      <h2>NEW COLLECTION</h2> 
     </div>
-  </div>
+    <div class="col-md-6 text-end">
+      <a href="#" class="view-all-link">View all</a>
+    </div>
+ 
 </div>
+
   <div class="row">
     <div class="col-xs-12 col-sm-12 col-md-12">
       <div class="carousel carousel-showmanymoveone slide" id="itemslider">
@@ -409,6 +200,7 @@ body {
 @endforeach
 
           </div> 
+
           <div id="slider-control">
         <a class="left carousel-control" href="#itemslider" data-slide="prev"><img src="https://cdn0.iconfinder.com/data/icons/website-kit-2/512/icon_402-512.png" alt="Left" class="img-responsive"></a>
         <a class="right carousel-control" href="#itemslider" data-slide="next"><img src="http://pixsector.com/cache/81183b13/avcc910c4ee5888b858fe.png" alt="Right" class="img-responsive"></a>
@@ -418,8 +210,6 @@ body {
   </div>
 
  
-<!--Item slider text-->
-<h1 class="text-center"> Product</h1>
 
 
 <div class="container">
