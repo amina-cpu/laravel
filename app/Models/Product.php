@@ -32,6 +32,10 @@ class Product extends Model
     /**
      * Define the relationship with ProductImage through ProductColor.
      */
+    public function category()
+    {
+        return $this->belongsTo(Categories::class, 'category_id');
+    }
     public function images()
     {
         return $this->hasManyThrough(

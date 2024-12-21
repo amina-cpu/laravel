@@ -12,10 +12,13 @@ Route::get('/signup', function () {
 
 Route::post('/signup', [App\Http\Controllers\RegistrationController::class, 'store']);
 
+
+Route::get('/category/{categoryName?}', [ListController::class, 'showCategory'])->name('category');
+
 // Route for homepage, which fetches products
-Route::get('/homepage', [ProductController::class, 'showHomepage']);
+Route::get('/homepage', [ProductController::class, 'showHomepage'])->name('homepage');
 Route::get('/product/{id}', [ProductDescription::class, 'show'])->name('product.description');
 Route::get('/send-email', [TestController::class, 'sendEmail']);
-Route::get('/full-list', [ListController::class, 'showHomepage']);
+Route::get('/full-list', [ListController::class, 'showHomepage'])->name('full-list');
 
 

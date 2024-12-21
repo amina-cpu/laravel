@@ -26,18 +26,15 @@
 
             <!-- Navigation -->
             <nav class="navigation">
-                <a href="#">HOME</a>
+                <a href="{{ route('homepage') }}"> HOME</a>
                 <div class="dropdown">
                     <a href="#">ABOUT US</a>
                 </div>
-                <a href="#">SHOP ALL</a>
-                <a href="#">DRESSES</a>
-                <a href="#">HIGH HEELS</a>
-                <a href="#">PANTS</a>
-                <a href="#">SUITS</a>
-                <a href="#">BATH & BODY</a>
-                <a href="#">ECO-REFILLS</a>
-                <a href="#">HOTEL AMENITIES</a>
+                <a href="{{ route('full-list') }}">SHOP ALL</a>
+                <a href="{{ route('category', ['categoryName' => 'Dresses']) }}">DRESSES</a>
+    <a href="{{ route('category', ['categoryName' => 'High Heels']) }}">HIGH HEELS</a>
+    <a href="{{ route('category', ['categoryName' => 'Pants']) }}">PANTS</a>
+    <a href="{{ route('category', ['categoryName' => 'Suits']) }}">SUITS</a>
             </nav>
 
             
@@ -50,27 +47,30 @@
             </div>
         </div>
     </header>
-<div class="container-fluid">
-    <div class="row">
-        @foreach ($products as $product)
-            <div class="col-md-3 col-10 mt-5">
+    <div class="container-fluid">
+    <div class="row g-3">
+        @forelse ($products as $product)
+            <div class="col-md-3 col-sm-6 d-flex">
                 <div class="card mx-auto">
                     <img class="mx-auto img-thumbnail"
                          src="{{ $product->images->isNotEmpty() ? asset('images/' . $product->images->first()->image_url) : asset('images/default.jpg') }}"
-                         alt="{{ $product->name }}" width="auto" height="auto"/>
+                         alt="{{ $product->name }}" />
                     <div class="card-body text-center">
                         <div class="cvp">
                             <h5 class="card-title font-weight-bold">{{ $product->name }}</h5>
                             <p class="card-text">{{ $product->price }}</p>
-                            <a href="{{ route('product.description', ['id' => $product->id]) }}" class="btn details px-auto">View Details</a><br />
-                            <a href="#" class="btn cart px-auto">ADD TO CART</a>
+                            <a href="{{ route('product.description', ['id' => $product->id]) }}" class="btn details">View Details</a>
+                            <a href="#" class="btn cart">ADD TO CART</a>
                         </div>
                     </div>
                 </div>
             </div>
-        @endforeach
+        @empty
+            <p class="text-center w-100">No products found in this category.</p>
+        @endforelse
     </div>
 </div>
+
 
 </body>
     </html>

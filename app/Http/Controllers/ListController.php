@@ -13,4 +13,18 @@ class ListController extends Controller
         $products = Product::with(['images', 'colors'])->get();
         return view('full-list', compact('products'));
     }
+    public function showCategory($categoryName = null)
+    {
+        if ($categoryName) {
+            // Filter products by category name
+            $products = Product::whereHas('category', function ($query) use ($categoryName) {
+                $query->where('name', $categoryName);
+            })->with(['images', 'colors'])->get();
+        } else {
+            // Show all products if no category is specified
+            $products = Product::with(['images', 'colors'])->get();
+        }
+
+        return view('full-list', compact('products'));
+    }
 }

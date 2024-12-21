@@ -50,7 +50,7 @@
                 <div class="dropdown">
                     <a href="#">ABOUT US</a>
                 </div>
-                <a href="#">SHOP ALL</a>
+                <a href="{{ route('full-list') }}">SHOP ALL</a>
                 <a href="#">DRESSES</a>
                 <a href="#">HIGH HEELS</a>
                 <a href="#">PANTS</a>
